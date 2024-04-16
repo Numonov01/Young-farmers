@@ -48,7 +48,7 @@ const App = () => {
         style={{
           background: "white",
           boxShadow:
-            "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
+            "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
         }}
       >
         <div className="demo-logo-vertical" />
@@ -66,7 +66,7 @@ const App = () => {
             padding: 0,
             background: "white",
             boxShadow:
-              "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
+              "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
           }}
         />
         <Content style={{}}>
@@ -77,7 +77,7 @@ const App = () => {
             textAlign: "center",
             background: "#fff",
             boxShadow:
-              "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
+              "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
           }}
         >
           Ant Design ©{new Date().getFullYear()} Created by Ant UED

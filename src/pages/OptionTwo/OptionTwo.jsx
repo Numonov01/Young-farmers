@@ -275,7 +275,7 @@ function OptionTwo() {
             width: 220,
             textAlign: "center",
             boxShadow:
-              "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
+              "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
           }}
         >
           <Statistic
@@ -298,7 +298,7 @@ function OptionTwo() {
             width: 220,
             textAlign: "center",
             boxShadow:
-              "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
+              "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
           }}
         >
           <Statistic
@@ -321,7 +321,7 @@ function OptionTwo() {
             width: 220,
             textAlign: "center",
             boxShadow:
-              "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
+              "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
           }}
         >
           <Statistic
@@ -344,7 +344,7 @@ function OptionTwo() {
             width: 220,
             textAlign: "center",
             boxShadow:
-              "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
+              "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
           }}
         >
           <Statistic
@@ -367,7 +367,7 @@ function OptionTwo() {
             width: 220,
             textAlign: "center",
             boxShadow:
-              "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
+              "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
           }}
         >
           <Statistic
@@ -394,11 +394,13 @@ function OptionTwo() {
           borderRadius: 8,
           padding: 18,
           boxShadow:
-            "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
+            "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
         }}
       >
         <div style={{ textAlign: "center", paddingTop: "8px" }}>
           <h2 style={{ paddingBottom: "18px" }}>UMUMUMIY AJRATILGAN MAYDON</h2>
+          <hr />
+          <br />
           <Pie {...config1} />
         </div>
       </div>
@@ -417,8 +419,9 @@ function OptionTwo() {
             background: "white",
             flexBasis: "calc(50%)",
             borderRadius: 8,
+            padding: 18,
             boxShadow:
-              "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
+              "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
           }}
         >
           <div
@@ -432,6 +435,7 @@ function OptionTwo() {
             <h2>FAOLIYAT TURI</h2>
             <h2>DEHQONLAR SONI</h2>
           </div>
+          <hr />
           <Bar {...config2} />
         </div>
 
@@ -445,12 +449,13 @@ function OptionTwo() {
             borderRadius: 8,
             padding: 18,
             boxShadow:
-              "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
+              "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
           }}
         >
-          <div style={{ textAlign: "center" }}>
+          <div style={{ textAlign: "center", padding: 18 }}>
             <h2>MUAMMO VA TAKLIFLAR</h2>
           </div>
+          <hr />
           <Pie {...config3} />
         </div>
       </div>
