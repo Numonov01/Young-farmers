@@ -45,10 +45,15 @@ const App = () => {
         collapsible
         collapsed={collapsed}
         onCollapse={(value) => setCollapsed(value)}
+        style={{
+          background: "white",
+          boxShadow:
+            "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
+        }}
       >
         <div className="demo-logo-vertical" />
         <Menu
-          theme="dark"
+          theme="light"
           defaultSelectedKeys={["1"]}
           mode="inline"
           items={items}
@@ -59,19 +64,20 @@ const App = () => {
         <Header
           style={{
             padding: 0,
-            // background: colorBgContainer,
+            background: "white",
+            boxShadow:
+              "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
           }}
         />
-        <Content
-          style={{
-            margin: "0 16px",
-          }}
-        >
+        <Content style={{}}>
           <Router />
         </Content>
         <Footer
           style={{
             textAlign: "center",
+            background: "#fff",
+            boxShadow:
+              "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
           }}
         >
           Ant Design ©{new Date().getFullYear()} Created by Ant UED

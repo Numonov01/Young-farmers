@@ -274,6 +274,8 @@ function OptionTwo() {
           style={{
             width: 220,
             textAlign: "center",
+            boxShadow:
+              "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
           }}
         >
           <Statistic
@@ -295,6 +297,8 @@ function OptionTwo() {
           style={{
             width: 220,
             textAlign: "center",
+            boxShadow:
+              "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
           }}
         >
           <Statistic
@@ -316,6 +320,8 @@ function OptionTwo() {
           style={{
             width: 220,
             textAlign: "center",
+            boxShadow:
+              "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
           }}
         >
           <Statistic
@@ -337,6 +343,8 @@ function OptionTwo() {
           style={{
             width: 220,
             textAlign: "center",
+            boxShadow:
+              "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
           }}
         >
           <Statistic
@@ -358,6 +366,8 @@ function OptionTwo() {
           style={{
             width: 220,
             textAlign: "center",
+            boxShadow:
+              "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
           }}
         >
           <Statistic
@@ -380,12 +390,15 @@ function OptionTwo() {
         style={{
           margin: 24,
           minHeight: 360,
-          background: "lightblue",
+          background: "white",
           borderRadius: 8,
+          padding: 18,
+          boxShadow:
+            "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
         }}
       >
         <div style={{ textAlign: "center", paddingTop: "8px" }}>
-          <h2>UMUMUMIY AJRATILGAN MAYDON</h2>
+          <h2 style={{ paddingBottom: "18px" }}>UMUMUMIY AJRATILGAN MAYDON</h2>
           <Pie {...config1} />
         </div>
       </div>
@@ -400,10 +413,12 @@ function OptionTwo() {
           style={{
             margin: 24,
             minHeight: 360,
-            minWidth: 200,
-            background: "lightgreen",
+            minWidth: 230,
+            background: "white",
             flexBasis: "calc(50%)",
             borderRadius: 8,
+            boxShadow:
+              "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
           }}
         >
           <div
@@ -424,11 +439,13 @@ function OptionTwo() {
           style={{
             margin: 24,
             minHeight: 360,
-            minWidth: 200,
+            minWidth: 230,
             flexBasis: "calc(40%)",
-
-            background: "lightgray",
+            background: "white",
             borderRadius: 8,
+            padding: 18,
+            boxShadow:
+              "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
           }}
         >
           <div style={{ textAlign: "center" }}>
