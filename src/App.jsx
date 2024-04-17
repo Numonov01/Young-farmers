@@ -20,8 +20,8 @@ function getItem(label, key, icon, children) {
   };
 }
 const items = [
-  getItem(<Link to={"/OptionOne"}>OptionOne</Link>, "1", <PieChartOutlined />),
-  getItem(<Link to={"/OptionTwo"}>OptionTwo</Link>, "2", <DesktopOutlined />),
+  getItem(<Link to={"/OptionOne"}>OptionOne</Link>, "2", <PieChartOutlined />),
+  getItem(<Link to={"/OptionTwo"}>OptionTwo</Link>, "1", <DesktopOutlined />),
   getItem("User", "sub1", <UserOutlined />, [
     getItem(<Link to={"/user/Tom"}>Tom</Link>, "3"),
     getItem(<Link to={"/user/Bill"}>Bill</Link>, "4"),
@@ -33,6 +33,8 @@ const items = [
   ]),
   getItem(<Link to={"/Files"}>Files</Link>, "9", <FileOutlined />),
 ];
+
+// console.log(items[0].label.props);
 const App = () => {
   const [collapsed, setCollapsed] = useState(false);
   return (
@@ -54,7 +56,7 @@ const App = () => {
         <div className="demo-logo-vertical" />
         <Menu
           theme="light"
-          defaultSelectedKeys={["1"]}
+          defaultSelectedKeys={["2"]}
           mode="inline"
           items={items}
         />
