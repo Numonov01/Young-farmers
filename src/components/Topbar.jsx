@@ -4,8 +4,10 @@ import React from "react";
 import {
   UsergroupAddOutlined,
   AreaChartOutlined,
-  AlignLeftOutlined,
   PayCircleOutlined,
+  ArrowUpOutlined,
+  PieChartOutlined,
+  ArrowDownOutlined,
 } from "@ant-design/icons";
 import { Card, Statistic, Select, DatePicker, Space } from "antd";
 export default function Topbar() {
@@ -28,9 +30,10 @@ export default function Topbar() {
         <Select
           showSearch
           style={{
-            width: 200,
+            width: 300,
+            height: 40,
           }}
-          placeholder="HUDUD"
+          placeholder="Hudud"
           optionFilterProp="children"
           filterOption={(input, option) =>
             (option?.label ?? "").includes(input)
@@ -62,9 +65,10 @@ export default function Topbar() {
         <Select
           showSearch
           style={{
-            width: 200,
+            width: 300,
+            height: 40,
           }}
-          placeholder="TUMAN"
+          placeholder="Tuman"
           optionFilterProp="children"
           filterOption={(input, option) =>
             (option?.label ?? "").includes(input)
@@ -92,9 +96,10 @@ export default function Topbar() {
         <Select
           showSearch
           style={{
-            width: 200,
+            width: 300,
+            height: 40,
           }}
-          placeholder="MAHALLA"
+          placeholder="Mahalla"
           optionFilterProp="children"
           filterOption={(input, option) =>
             (option?.label ?? "").includes(input)
@@ -120,10 +125,14 @@ export default function Topbar() {
           ]}
         />
         <Space direction="vertical">
-          <DatePicker onChange={onChange} picker="year" placeholder="YIL" />
-        </Space>
-        <Space direction="vertical">
-          <DatePicker onChange={onChange} picker="week" placeholder="OY" />
+          <DatePicker
+            onChange={onChange}
+            placeholder="Sana"
+            style={{
+              width: 300,
+              height: 40,
+            }}
+          />
         </Space>
       </div>
       <div
@@ -131,7 +140,7 @@ export default function Topbar() {
         style={{
           margin: 24,
           display: "flex",
-          // flexDirection: "row",
+          flexDirection: "row",
           justifyContent: "space-between",
           flexWrap: "wrap",
           gap: 10,
@@ -140,117 +149,168 @@ export default function Topbar() {
         <Card
           bordered={false}
           style={{
-            width: 220,
-            textAlign: "center",
-            boxShadow:
-              "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
+            width: 300,
+            // boxShadow:
+            //   "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
           }}
         >
-          <Statistic
-            title="Yosh dehqonlar soni"
-            value={7812.3}
-            precision={2}
-            valueStyle={{
-              color: "#3f8600",
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-            prefix={<UsergroupAddOutlined />} // Bu qator
-            suffix="ta"
-          />
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <UsergroupAddOutlined style={{ fontSize: 35, marginBottom: 15 }} />
+            <Statistic
+              title="Yosh dehqonlar soni"
+              value={7812}
+              precision={0}
+              valueStyle={{
+                fontSize: 30,
+                color: "#1F1F1F",
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                fontWeight: "bolder",
+                padding: "10px 0 0 0",
+              }}
+              suffix={
+                <span style={{ color: "#68C738", fontSize: 20 }}>
+                  16%
+                  <ArrowUpOutlined style={{ color: "#68C738", fontSize: 16 }} />
+                </span>
+              }
+            />
+          </div>
         </Card>
+
         <Card
           bordered={false}
           style={{
-            width: 220,
-            textAlign: "center",
-            boxShadow:
-              "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
+            width: 300,
+            // boxShadow:
+            //   "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
           }}
         >
-          <Statistic
-            title="Faoliyat turi"
-            value={78}
-            precision={2}
-            valueStyle={{
-              color: "#3f8600",
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-            prefix={<AlignLeftOutlined />} // Bu qator
-            suffix="ta"
-          />
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <PieChartOutlined style={{ fontSize: 35, marginBottom: 15 }} />
+            <Statistic
+              title="Faoliyat turi"
+              value={7812}
+              precision={0}
+              valueStyle={{
+                fontSize: 30,
+                color: "#1F1F1F",
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                fontWeight: "bolder",
+                padding: "10px 0 0 0",
+              }}
+              suffix={
+                <span style={{ color: "#FF0000", fontSize: 20 }}>
+                  -7%
+                  <ArrowDownOutlined
+                    style={{ color: "#FF0000", fontSize: 16 }}
+                  />
+                </span>
+              }
+            />
+          </div>
         </Card>
+
         <Card
           bordered={false}
           style={{
-            width: 220,
-            textAlign: "center",
-            boxShadow:
-              "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
+            width: 300,
+            // boxShadow:
+            //   "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
           }}
         >
-          <Statistic
-            title="Umumiy ajratilgan maydon"
-            value={952.8}
-            precision={2}
-            valueStyle={{
-              color: "#3f8600",
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-            prefix={<AreaChartOutlined />} // Bu qator
-            suffix="ga"
-          />
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <AreaChartOutlined style={{ fontSize: 35, marginBottom: 15 }} />
+            <Statistic
+              title="Umumiy ajratilgan maydon"
+              value={7812}
+              precision={0}
+              valueStyle={{
+                fontSize: 30,
+                color: "#1F1F1F",
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                fontWeight: "bolder",
+                padding: "10px 0 0 0",
+              }}
+              suffix={
+                <span style={{ color: "#68C738", fontSize: 20 }}>
+                  27%
+                  <ArrowUpOutlined style={{ color: "#68C738", fontSize: 16 }} />
+                </span>
+              }
+            />
+          </div>
         </Card>
+        {/* 
         <Card
           bordered={false}
           style={{
-            width: 220,
-            textAlign: "center",
+            width: 300,
             boxShadow:
               "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
           }}
         >
-          <Statistic
-            title="Muammo va takliflar"
-            value={128}
-            precision={2}
-            valueStyle={{
-              color: "#3f8600",
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-            prefix={<UsergroupAddOutlined />} // Bu qator
-            suffix="ta"
-          />
-        </Card>
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <UsergroupAddOutlined style={{ fontSize: 35, marginBottom: 15 }} />
+            <Statistic
+              title="Muammo va takliflar"
+              value={7812}
+              precision={0}
+              valueStyle={{
+                fontSize: 30,
+                color: "#1F1F1F",
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                fontWeight: "bolder",
+                padding: "10px 0 0 0",
+              }}
+              suffix={
+                <span style={{ color: "#FF0000", fontSize: 20 }}>
+                  -4%
+                  <ArrowUpOutlined style={{ color: "#FF0000", fontSize: 16 }} />
+                </span>
+              }
+            />
+          </div>
+        </Card> */}
+
         <Card
           bordered={false}
           style={{
-            width: 220,
-            textAlign: "center",
-            boxShadow:
-              "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
+            width: 300,
+            // boxShadow:
+            //   "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
           }}
         >
-          <Statistic
-            title="Daromad"
-            value={1128.4}
-            precision={2}
-            valueStyle={{
-              color: "#3f8600",
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-            prefix={<PayCircleOutlined />} // Bu qator
-            suffix="$"
-          />
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <PayCircleOutlined style={{ fontSize: 35, marginBottom: 15 }} />
+            <Statistic
+              title="Daromad"
+              value={7812}
+              precision={0}
+              valueStyle={{
+                fontSize: 30,
+                color: "#1F1F1F",
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                fontWeight: "bolder",
+                padding: "10px 0 0 0",
+              }}
+              suffix={
+                <span style={{ color: "#68C738", fontSize: 20 }}>
+                  13%
+                  <ArrowUpOutlined style={{ color: "#68C738", fontSize: 16 }} />
+                </span>
+              }
+            />
+          </div>
         </Card>
       </div>
     </div>

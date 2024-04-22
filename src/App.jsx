@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
+import { Layout, Menu, Avatar, Dropdown } from "antd";
 import {
   DesktopOutlined,
   FileOutlined,
@@ -7,10 +8,10 @@ import {
   TeamOutlined,
   UserOutlined,
 } from "@ant-design/icons";
-import { Layout, Menu } from "antd";
 import { Link } from "react-router-dom";
 import Router from "./router";
 const { Header, Content, Footer, Sider } = Layout;
+
 function getItem(label, key, icon, children) {
   return {
     key,
@@ -19,9 +20,10 @@ function getItem(label, key, icon, children) {
     label,
   };
 }
+
 const items = [
-  getItem(<Link to={"/OptionOne"}>OptionOne</Link>, "2", <PieChartOutlined />),
   getItem(<Link to={"/OptionTwo"}>OptionTwo</Link>, "1", <DesktopOutlined />),
+  getItem(<Link to={"/OptionOne"}>OptionOne</Link>, "2", <PieChartOutlined />),
   getItem("User", "sub1", <UserOutlined />, [
     getItem(<Link to={"/user/Tom"}>Tom</Link>, "3"),
     getItem(<Link to={"/user/Bill"}>Bill</Link>, "4"),
@@ -34,9 +36,27 @@ const items = [
   getItem(<Link to={"/Files"}>Files</Link>, "9", <FileOutlined />),
 ];
 
-// console.log(items[0].label.props);
 const App = () => {
   const [collapsed, setCollapsed] = useState(false);
+
+  const menu = (
+    <Menu>
+      <Menu.Item key="0">
+        <Link to="/profile">
+          <UserOutlined />
+          Profile
+        </Link>
+      </Menu.Item>
+      <Menu.Divider />
+      <Menu.Item key="1">
+        <Link to="/logout">
+          <UserOutlined />
+          Logout
+        </Link>
+      </Menu.Item>
+    </Menu>
+  );
+
   return (
     <Layout
       style={{
@@ -49,14 +69,14 @@ const App = () => {
         onCollapse={(value) => setCollapsed(value)}
         style={{
           background: "white",
-          boxShadow:
-            "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
+          // position: "relative",
+          // zIndex: 1,
         }}
       >
         <div className="demo-logo-vertical" />
         <Menu
           theme="light"
-          defaultSelectedKeys={["2"]}
+          defaultSelectedKeys={["1"]}
           mode="inline"
           items={items}
         />
@@ -65,24 +85,55 @@ const App = () => {
       <Layout>
         <Header
           style={{
-            padding: 0,
-            background: "white",
-            boxShadow:
-              "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
+            // position: "fixed",
+            // zIndex: 1000,
+            // padding: 0,
+            background: "white", //Nav
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            padding: "0 20px",
+            // width: "100%",
           }}
-        />
-        <Content style={{}}>
+        >
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <img
+              src="../farms.svg"
+              alt="icon"
+              style={{
+                width: 40,
+                marginRight: 10,
+              }}
+            />
+            <h3 className="brand">Yosh fermerlar</h3>
+          </div>
+          <Dropdown overlay={menu} trigger={["click"]}>
+            <a
+              className="ant-dropdown-link"
+              onClick={(e) => e.preventDefault()}
+              href="/"
+              style={{ color: "black", fontSize: 18 }}
+            >
+              <Avatar src="../Boy.png" size={50} />
+              {/* Profile */}
+            </a>
+          </Dropdown>
+        </Header>
+        <Content style={{ background: "#EBEDF0", borderRadius: 8 }}>
           <Router />
         </Content>
         <Footer
           style={{
             textAlign: "center",
             background: "#fff",
-            boxShadow:
-              "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
           }}
         >
-          Ant Design ©{new Date().getFullYear()} Created by Ant UED
+          Yosh Fermerlar ©{new Date().getFullYear()}
         </Footer>
       </Layout>
     </Layout>

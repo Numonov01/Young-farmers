@@ -1,16 +1,22 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
-
 import { Pie } from "@ant-design/plots";
+
 function CommonArea() {
   const config = {
     data: [
-      { type: "Toshkent", value: 27 },
-      { type: "Samarqand", value: 25 },
-      { type: "Buxoro", value: 18 },
-      { type: "Farg'ona", value: 15 },
-      { type: "Namangan", value: 10 },
-      { type: "Andijon", value: 5 },
+      { type: "Andijon viloyati", value: 17 },
+      { type: "Buxoro viloyati", value: 15 },
+      { type: "Fargona viloyati", value: 18 },
+      { type: "Jizzax viloyati", value: 15 },
+      { type: "Xorazm viloyati", value: 10 },
+      { type: "Namangan viloyati", value: 5 },
+      { type: "Navoiy viloyati", value: 27 },
+      { type: "Qashqadaryo viloyati", value: 25 },
+      // { type: "Samarqand viloyati", value: 18 },
+      // { type: "Sirdaryo viloyati", value: 15 },
+      // { type: "Surxondaryo viloyati", value: 10 },
+      // { type: "Qoraqalpogiston Respublikasi", value: 5 },
     ],
     angleField: "value",
     colorField: "type",
@@ -35,13 +41,12 @@ function CommonArea() {
         minHeight: 360,
         background: "white",
         borderRadius: 8,
-        padding: 18,
-        boxShadow:
-          "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
+        // boxShadow:
+        //   "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
       }}
     >
-      <div style={{ textAlign: "center", paddingTop: "8px" }}>
-        <h2 style={{ paddingBottom: "18px" }}>UMUMUMIY AJRATILGAN MAYDON</h2>
+      <div style={{ paddingTop: "8px" }}>
+        <h3 style={{ padding: "18px" }}>Umumiy ajratilgan maydon</h3>
         <hr />
         <br />
         <Pie {...config} />

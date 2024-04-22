@@ -1,20 +1,20 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
-
 import { Bar } from "@ant-design/plots";
+
 export default function FarmerStatistic() {
   const data = [
     {
       labelName: "MEVACHILIK",
-      value: 110,
+      value: 210,
     },
     {
       labelName: "POLIZ",
-      value: 520,
+      value: 420,
     },
     {
       labelName: "ARPA",
-      value: 280,
+      value: 630,
     },
     {
       labelName: "BUGDOY",
@@ -76,9 +76,8 @@ export default function FarmerStatistic() {
         background: "white",
         flexBasis: "calc(50%)",
         borderRadius: 8,
-        padding: 18,
-        boxShadow:
-          "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
+        // boxShadow:
+        //   "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
       }}
     >
       <div
@@ -89,8 +88,8 @@ export default function FarmerStatistic() {
           padding: 18,
         }}
       >
-        <h2>FAOLIYAT TURI</h2>
-        <h2>DEHQONLAR SONI</h2>
+        <h3>Faoliyat turi</h3>
+        <h3>Dehqonlar soni</h3>
       </div>
       <hr />
       <Bar {...config} />

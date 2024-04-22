@@ -1,13 +1,13 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
-
 import { Pie } from "@ant-design/plots";
+
 export default function ProblemComments() {
   const config = {
     data: [
-      { type: "1", value: 83 },
+      { type: "1", value: 53 },
       { type: "Bartaraf etilgan", value: 17 },
-      // { type: "Qolganlari", value: 18 },
+      { type: "Qolganlari", value: 30 },
     ],
     angleField: "value",
     colorField: "type",
@@ -34,7 +34,7 @@ export default function ProblemComments() {
           x: "50%",
           y: "50%",
           textAlign: "center",
-          fontSize: 40,
+          fontSize: 30,
           fontStyle: "bold",
         },
       },
@@ -49,13 +49,12 @@ export default function ProblemComments() {
         flexBasis: "calc(40%)",
         background: "white",
         borderRadius: 8,
-        padding: 18,
-        boxShadow:
-          "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
+        // boxShadow:
+        //   "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
       }}
     >
-      <div style={{ textAlign: "center", padding: 18 }}>
-        <h2>MUAMMO VA TAKLIFLAR</h2>
+      <div style={{ padding: 18 }}>
+        <h3>Muammo va takliflar</h3>
       </div>
       <hr />
       <Pie {...config} />
