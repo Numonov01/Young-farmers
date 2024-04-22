@@ -22,8 +22,8 @@ function getItem(label, key, icon, children) {
 }
 
 const items = [
-  getItem(<Link to={"/OptionTwo"}>OptionTwo</Link>, "1", <DesktopOutlined />),
-  getItem(<Link to={"/OptionOne"}>OptionOne</Link>, "2", <PieChartOutlined />),
+  getItem(<Link to={"/OptionTwo"}>Statistics</Link>, "1", <PieChartOutlined />),
+  getItem(<Link to={"/OptionOne"}>Option</Link>, "2", <DesktopOutlined />),
   getItem("User", "sub1", <UserOutlined />, [
     getItem(<Link to={"/user/Tom"}>Tom</Link>, "3"),
     getItem(<Link to={"/user/Bill"}>Bill</Link>, "4"),

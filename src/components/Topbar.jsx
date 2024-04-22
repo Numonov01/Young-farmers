@@ -21,7 +21,7 @@ export default function Topbar() {
         style={{
           margin: 24,
           display: "flex",
-          // flexDirection: "row",
+          flexDirection: "row",
           justifyContent: "space-between",
           flexWrap: "wrap",
           gap: 10,
@@ -150,8 +150,6 @@ export default function Topbar() {
           bordered={false}
           style={{
             width: 300,
-            // boxShadow:
-            //   "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
           }}
         >
           <div style={{ display: "flex", flexDirection: "column" }}>
@@ -183,8 +181,6 @@ export default function Topbar() {
           bordered={false}
           style={{
             width: 300,
-            // boxShadow:
-            //   "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
           }}
         >
           <div style={{ display: "flex", flexDirection: "column" }}>
@@ -218,8 +214,6 @@ export default function Topbar() {
           bordered={false}
           style={{
             width: 300,
-            // boxShadow:
-            //   "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
           }}
         >
           <div style={{ display: "flex", flexDirection: "column" }}>
@@ -246,46 +240,11 @@ export default function Topbar() {
             />
           </div>
         </Card>
-        {/* 
-        <Card
-          bordered={false}
-          style={{
-            width: 300,
-            boxShadow:
-              "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
-          }}
-        >
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <UsergroupAddOutlined style={{ fontSize: 35, marginBottom: 15 }} />
-            <Statistic
-              title="Muammo va takliflar"
-              value={7812}
-              precision={0}
-              valueStyle={{
-                fontSize: 30,
-                color: "#1F1F1F",
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                fontWeight: "bolder",
-                padding: "10px 0 0 0",
-              }}
-              suffix={
-                <span style={{ color: "#FF0000", fontSize: 20 }}>
-                  -4%
-                  <ArrowUpOutlined style={{ color: "#FF0000", fontSize: 16 }} />
-                </span>
-              }
-            />
-          </div>
-        </Card> */}
 
         <Card
           bordered={false}
           style={{
             width: 300,
-            // boxShadow:
-            //   "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
           }}
         >
           <div style={{ display: "flex", flexDirection: "column" }}>

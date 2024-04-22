@@ -34,8 +34,6 @@ const DemoColumn = () => {
         background: "white",
         flexBasis: "calc(100%)",
         borderRadius: 8,
-        // boxShadow:
-        //   "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",
       }}
     >
       <div style={{ paddingTop: "8px" }}>
