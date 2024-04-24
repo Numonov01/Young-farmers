@@ -69,8 +69,6 @@ const App = () => {
         onCollapse={(value) => setCollapsed(value)}
         style={{
           background: "white",
-          // position: "relative",
-          // zIndex: 1,
         }}
       >
         <div className="demo-logo-vertical" />
@@ -85,15 +83,11 @@ const App = () => {
       <Layout>
         <Header
           style={{
-            // position: "fixed",
-            // zIndex: 1,
-            // padding: 0,
             background: "white", //Nav
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
             padding: "0 20px",
-            // width: "100%",
           }}
         >
           <div

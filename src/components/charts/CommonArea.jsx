@@ -93,10 +93,8 @@ function CommonArea() {
             gap: 10,
           }}
         >
-          <div style={{ padding: 18, flex: 2 }}>
-            <div id="map">
-              <UzbMap/>
-            </div>
+          <div style={{ padding: 18, flex: 2, minWidth: 300 }}>
+            <UzbMap />
           </div>
           <div style={{ padding: 18, flex: 1 }}>
             <Radio.Group
