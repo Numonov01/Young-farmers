@@ -15,15 +15,18 @@ function OptionTwo() {
 
       <div
         style={{
+          margin: 24,
           display: "flex",
+          flexDirection: "row",
           justifyContent: "space-between",
           flexWrap: "wrap",
+          gap: 20,
         }}
       >
         <FarmerStatistic />
         <ProblemComments />
-        <IncomeStatistic />
       </div>
+      <IncomeStatistic />
     </>
   );
 }

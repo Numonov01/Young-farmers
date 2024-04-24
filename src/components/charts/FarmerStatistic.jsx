@@ -70,12 +70,11 @@ export default function FarmerStatistic() {
   return (
     <div
       style={{
-        margin: 24,
-        minHeight: 360,
+        flexGrow: 1,
+        flexBasis: 300,
         minWidth: 230,
-        background: "white",
-        flexBasis: "calc(50%)",
         borderRadius: 8,
+        background: "white",
       }}
     >
       <div

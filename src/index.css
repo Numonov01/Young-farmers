@@ -20,7 +20,6 @@ hr {
   z-index: 999; /* yoki istalgan bir qiymat */
 }
 .brand {
-  font-family: "Pacifico", cursive;
-  font-weight: 600;
-  font-style: normal;
+  font-family: "Lexend", sans-serif;
+  font-size: 18px;
 }

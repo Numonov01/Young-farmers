@@ -30,8 +30,10 @@ export default function Topbar() {
         <Select
           showSearch
           style={{
-            width: 300,
-            height: 40,
+            height: 38,
+            flexGrow: 1,
+            flexBasis: 160,
+            minWidth: 230,
           }}
           placeholder="Hudud"
           optionFilterProp="children"
@@ -65,8 +67,10 @@ export default function Topbar() {
         <Select
           showSearch
           style={{
-            width: 300,
-            height: 40,
+            height: 38,
+            flexGrow: 1,
+            flexBasis: 160,
+            minWidth: 230,
           }}
           placeholder="Tuman"
           optionFilterProp="children"
@@ -96,8 +100,10 @@ export default function Topbar() {
         <Select
           showSearch
           style={{
-            width: 300,
-            height: 40,
+            height: 38,
+            flexGrow: 1,
+            flexBasis: 160,
+            minWidth: 230,
           }}
           placeholder="Mahalla"
           optionFilterProp="children"
@@ -124,13 +130,20 @@ export default function Topbar() {
             },
           ]}
         />
-        <Space direction="vertical">
+        <Space
+          direction="vertical"
+          style={{
+            flexGrow: 1,
+            flexBasis: 160,
+            minWidth: 230,
+          }}
+        >
           <DatePicker
             onChange={onChange}
             placeholder="Sana"
             style={{
-              width: 300,
-              height: 40,
+              height: 38,
+              width: "100%",
             }}
           />
         </Space>
@@ -149,7 +162,9 @@ export default function Topbar() {
         <Card
           bordered={false}
           style={{
-            width: 300,
+            flexGrow: 1,
+            flexBasis: 160,
+            minWidth: 230,
           }}
         >
           <div style={{ display: "flex", flexDirection: "column" }}>
@@ -180,7 +195,9 @@ export default function Topbar() {
         <Card
           bordered={false}
           style={{
-            width: 300,
+            flexGrow: 1,
+            flexBasis: 160,
+            minWidth: 230,
           }}
         >
           <div style={{ display: "flex", flexDirection: "column" }}>
@@ -213,7 +230,9 @@ export default function Topbar() {
         <Card
           bordered={false}
           style={{
-            width: 300,
+            flexGrow: 1,
+            flexBasis: 160,
+            minWidth: 230,
           }}
         >
           <div style={{ display: "flex", flexDirection: "column" }}>
@@ -244,7 +263,9 @@ export default function Topbar() {
         <Card
           bordered={false}
           style={{
-            width: 300,
+            flexGrow: 1,
+            flexBasis: 160,
+            minWidth: 230,
           }}
         >
           <div style={{ display: "flex", flexDirection: "column" }}>

@@ -42,7 +42,7 @@ const App = () => {
   const menu = (
     <Menu>
       <Menu.Item key="0">
-        <Link to="/profile">
+        <Link to="/user/Tom">
           <UserOutlined />
           Profile
         </Link>
@@ -86,7 +86,7 @@ const App = () => {
         <Header
           style={{
             // position: "fixed",
-            // zIndex: 1000,
+            // zIndex: 1,
             // padding: 0,
             background: "white", //Nav
             display: "flex",

@@ -5,7 +5,7 @@ import { Pie } from "@ant-design/plots";
 export default function ProblemComments() {
   const config = {
     data: [
-      { type: "1", value: 53 },
+      { type: "123", value: 53 },
       { type: "Bartaraf etilgan", value: 17 },
       { type: "Qolganlari", value: 30 },
     ],
@@ -43,10 +43,9 @@ export default function ProblemComments() {
   return (
     <div
       style={{
-        margin: 24,
-        minHeight: 360,
+        flexGrow: 1,
+        flexBasis: 100,
         minWidth: 230,
-        flexBasis: "calc(40%)",
         background: "white",
         borderRadius: 8,
       }}

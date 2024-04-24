@@ -96,8 +96,9 @@ function CommonArea() {
             <img
               src="../uzb.png"
               alt="uzb"
-              style={{ maxWidth: "100%", height: "auto" }}
+              style={{ maxWidth: "100%", height: "auto", minWidth: 210 }}
             />
+            <div id="map"></div>
           </div>
           <div style={{ padding: 18, flex: 1 }}>
             <Radio.Group
