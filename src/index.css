@@ -23,3 +23,11 @@ hr {
   font-family: "Lexend", sans-serif;
   font-size: 18px;
 }
+path:hover {
+  fill: #1f4d76;
+  transform: scale(1.01);
+}
+path {
+  transition: transform 0.3s;
+  border-color: #a01717;
+}

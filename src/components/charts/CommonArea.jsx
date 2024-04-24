@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
 import { Radio, Table } from "antd";
+import UzbMap from "../../../public/UzbMap";
 
 function CommonArea() {
   const columns = [
@@ -93,12 +94,9 @@ function CommonArea() {
           }}
         >
           <div style={{ padding: 18, flex: 2 }}>
-            <img
-              src="../uzb.png"
-              alt="uzb"
-              style={{ maxWidth: "100%", height: "auto", minWidth: 210 }}
-            />
-            <div id="map"></div>
+            <div id="map">
+              <UzbMap/>
+            </div>
           </div>
           <div style={{ padding: 18, flex: 1 }}>
             <Radio.Group
