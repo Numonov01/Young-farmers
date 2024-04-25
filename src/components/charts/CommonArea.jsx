@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
 import { Radio, Table } from "antd";
-import UzbMap from "../../../public/UzbMap";
+import UzbMap from "../../pages/OptionTwo/UzbMap";
 
 function CommonArea() {
   const columns = [
