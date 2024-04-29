@@ -101,14 +101,17 @@ const App = () => {
               alignItems: "center",
             }}
           >
-            <img
+            {/* <img
               src="../vvvv.jpg"
               alt="icon"
               style={{
                 width: 55,
                 marginRight: 10,
               }}
-            />
+            /> */}
+            <Avatar size={40} style={{ marginRight: 10 }}>
+              YF
+            </Avatar>
             <h3 className="brand">Yosh fermerlar</h3>
           </div>
           <Dropdown overlay={menu} trigger={["click"]}>
