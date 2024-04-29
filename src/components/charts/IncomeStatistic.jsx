@@ -4,19 +4,19 @@ import { Column } from "@ant-design/plots";
 
 const config = {
   data: [
-    { action: "Toshkent", pv: 47600 },
-    { action: "Samarqand", pv: 31200 },
-    { action: "Buxoro", pv: 35000 },
-    { action: "Andijon", pv: 18600 },
-    { action: "Qashqadaryo", pv: 42500 },
-    { action: "Jizzax", pv: 22000 },
-    { action: "Farg'ona", pv: 35000 },
-    { action: "Xorazm", pv: 25000 },
-    { action: "Namangan", pv: 50000 },
-    { action: "Navoiy", pv: 18500 },
-    { action: "Qoraqalpogʻiston", pv: 30000 },
-    { action: "Sirdaryo", pv: 35000 },
-    { action: "Surxondaryo", pv: 25000 },
+    { action: "Mevachilik", pv: 47600 },
+    { action: "Chorvachilik", pv: 31200 },
+    { action: "Dehqonnchilik", pv: 35000 },
+    { action: "Baliqchilik", pv: 18600 },
+    { action: "Temirchilik", pv: 42500 },
+    { action: "Konchilik", pv: 22000 },
+    { action: "O'rmonchilik", pv: 35000 },
+    { action: "Suvsozlik", pv: 25000 },
+    { action: "Nashriyotchilik", pv: 50000 },
+    { action: "Ovchilik", pv: 18500 },
+    { action: "Sotuvchilik", pv: 30000 },
+    { action: "Tarjimonlik", pv: 35000 },
+    { action: "Tikuvchilik", pv: 25000 },
   ],
   xField: "action",
   yField: "pv",
@@ -48,7 +48,7 @@ function IncomeStatistic() {
           borderRadius: 8,
         }}
       >
-        <h3 style={{ padding: 18 }}>Umumiy ajratilgan maydon</h3>
+        <h3 style={{ padding: 18 }}>Faoliyat turi</h3>
         <hr />
         <Column {...config} />
       </div>

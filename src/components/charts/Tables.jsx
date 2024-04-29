@@ -89,44 +89,51 @@ function Tables() {
       <div
         style={{
           margin: 24,
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-between",
-          flexWrap: "wrap",
-          gap: 10,
+          minHeight: 360,
+          minWidth: 230,
+          background: "white",
+          borderRadius: 8,
         }}
       >
-        <Table
-          columns={columns}
-          dataSource={data}
-          scroll={{
-            x: 1500,
+        <h3 style={{ padding: 18 }}>Viloyatlar kesimida</h3>
+        <hr />
+        <div
+          style={{
+            paddingTop: 10,
           }}
-          summary={() => (
-            <Table.Summary fixed={fixedTop ? "top" : "bottom"}>
-              <Table.Summary.Row>
-                <Table.Summary.Cell index={0} colSpan={2}>
-                  <Switch
-                    checkedChildren="Fixed Top"
-                    unCheckedChildren="Fixed Top"
-                    checked={fixedTop}
-                    onChange={() => {
-                      setFixedTop(!fixedTop);
-                    }}
-                  />
-                </Table.Summary.Cell>
-                <Table.Summary.Cell index={2} colSpan={8}>
-                  Scroll Context
-                </Table.Summary.Cell>
-                <Table.Summary.Cell index={10}>Fix Right</Table.Summary.Cell>
-              </Table.Summary.Row>
-            </Table.Summary>
-          )}
-          // antd site header height
-          sticky={{
-            offsetHeader: 64,
-          }}
-        />
+        >
+          <Table
+            columns={columns}
+            dataSource={data}
+            scroll={{
+              x: 1500,
+            }}
+            summary={() => (
+              <Table.Summary fixed={fixedTop ? "top" : "bottom"}>
+                <Table.Summary.Row>
+                  <Table.Summary.Cell index={0} colSpan={2}>
+                    <Switch
+                      checkedChildren="Fixed Top"
+                      unCheckedChildren="Fixed Top"
+                      checked={fixedTop}
+                      onChange={() => {
+                        setFixedTop(!fixedTop);
+                      }}
+                    />
+                  </Table.Summary.Cell>
+                  <Table.Summary.Cell index={2} colSpan={8}>
+                    Scroll Context
+                  </Table.Summary.Cell>
+                  <Table.Summary.Cell index={10}>Fix Right</Table.Summary.Cell>
+                </Table.Summary.Row>
+              </Table.Summary>
+            )}
+            // antd site header height
+            sticky={{
+              offsetHeader: 64,
+            }}
+          />
+        </div>
       </div>
     </>
   );
