@@ -102,10 +102,10 @@ const App = () => {
             }}
           >
             <img
-              src="../farms.svg"
+              src="../vvvv.jpg"
               alt="icon"
               style={{
-                width: 40,
+                width: 55,
                 marginRight: 10,
               }}
             />
