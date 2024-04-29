@@ -76,6 +76,7 @@ const App = () => {
           theme="light"
           defaultSelectedKeys={["1"]}
           mode="inline"
+          style={{ position: "sticky", top: 0 }}
           items={items}
         />
       </Sider>
@@ -83,6 +84,10 @@ const App = () => {
       <Layout>
         <Header
           style={{
+            // position: "sticky",
+            // top: 0,
+            // zIndex: "1",
+            // width: "100%",
             background: "white", //Nav
             display: "flex",
             justifyContent: "space-between",
@@ -111,7 +116,10 @@ const App = () => {
               className="ant-dropdown-link"
               onClick={(e) => e.preventDefault()}
               href="/"
-              style={{ color: "black", fontSize: 18 }}
+              style={{
+                color: "black",
+                fontSize: 18,
+              }}
             >
               <Avatar src="../Boy.png" size={50} />
               {/* Profile */}
@@ -125,6 +133,7 @@ const App = () => {
           style={{
             textAlign: "center",
             background: "#fff",
+            height: 50,
           }}
         >
           Yosh Fermerlar ©{new Date().getFullYear()}

@@ -25,8 +25,28 @@ hr {
 }
 path:hover {
   fill: #1f4d76;
-  transform: scale(1.01);
+  /* opacity: 0.5; */
+  transform: scale(1.008);
 }
 path {
   transition: transform 0.3s;
+}
+
+table {
+  font-family: "Lato", sans-serif;
+  /* border-collapse: collapse; */
+  width: 100%;
+}
+
+th {
+  text-align: left;
+  padding: 18px;
+}
+td {
+  border: 2px solid #ebedf0;
+  text-align: left;
+  padding: 8px;
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
 }

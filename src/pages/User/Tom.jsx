@@ -5,17 +5,17 @@ import { useParams } from "react-router-dom";
 
 const columns = [
   {
-    title: "Ism",
+    title: "Name",
     dataIndex: "name",
     key: "name",
   },
   {
-    title: "Yosh",
+    title: "Password",
     dataIndex: "age",
     key: "age",
   },
   {
-    title: "Manzil",
+    title: "Gmail",
     dataIndex: "address",
     key: "address",
   },
@@ -30,40 +30,37 @@ const data = [
   {
     key: 1,
     name: "Nu'monov Tohir",
-    age: 21,
-    address: "Toshkent. Yunusobod",
-    description: "numonovtokhir@gmail.com",
+    age: 2684,
+    address: "numonovtokhir@gmail.com",
+    description: "Toshkent. Yunusobod",
   },
   {
     key: 2,
-    name: "Jim Green",
-    age: 42,
-    address: "London No. Lake Park",
-    description:
-      "My name is Jim Green, I am 42 years old, living in London No. 1 Lake Park.",
+    name: "Solijonov Muxammadjon",
+    age: 15987,
+    address: "muhsdev@gmail.com",
+    description: "Toshkent. Yunusobod",
   },
   {
     key: 3,
-    name: "Joe Black",
-    age: 32,
-    address: "Sydney No. ",
-    description:
-      "My name is Joe Black, I am 32 years old, living in Sydney No. 1 Lake Park.",
+    name: "Bosimbekov Hojiakbar",
+    age: 35789,
+    address: "xbosimbekov@gmail.com",
+    description: "Toshkent. Yunusobod",
   },
   {
     key: 4,
-    name: "Qadirbayev Gafur",
-    age: 18,
-    address: "Qoraqalpoq. Nukus",
-    description:
-      "My name is Joe Black, I am 32 years old, living in Sydney No. 1 Lake Park.",
+    name: "Nuriddin Muhammadjanov",
+    age: 1397,
+    address: "nmuhammadjanov@gmail.com",
+    description: "Toshkent. Yunusobod",
   },
   {
     key: 5,
-    name: "Not Expandable",
-    age: 29,
-    address: "Jiangsu No. London",
-    description: "This not expandable",
+    name: "Olimov Faxriddin",
+    age: 55555,
+    address: "f.olimoff@gmail.com",
+    description: "Toshkent. Yunusobod",
   },
 ];
 function Tom() {

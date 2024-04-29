@@ -37,7 +37,7 @@ const DemoColumn = () => {
       }}
     >
       <div style={{ paddingTop: "8px" }}>
-        <h3 style={{ padding: "18px" }}>Daromad</h3>
+        <h3 style={{ padding: "18px" }}>Faoliyat turi</h3>
         <hr />
         <br />
         <Column {...config} chartRef={chartRef} />

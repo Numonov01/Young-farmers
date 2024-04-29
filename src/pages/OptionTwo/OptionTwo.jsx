@@ -5,14 +5,17 @@ import CommonArea from "../../components/charts/CommonArea";
 import FarmerStatistic from "../../components/charts/FarmerStatistic";
 import ProblemComments from "../../components/charts/ProblemComments";
 import IncomeStatistic from "../../components/charts/IncomeStatistic";
+import Activity from "../../components/charts/Tables";
+import Statistics from "../../components/charts/Statistics";
 
 function OptionTwo() {
   return (
     <>
       <Topbar />
+      <Statistics />
 
       <CommonArea />
-
+      <IncomeStatistic />
       <div
         style={{
           margin: 24,
@@ -26,7 +29,8 @@ function OptionTwo() {
         <FarmerStatistic />
         <ProblemComments />
       </div>
-      <IncomeStatistic />
+
+      <Activity />
     </>
   );
 }

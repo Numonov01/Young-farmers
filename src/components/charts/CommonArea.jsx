@@ -1,76 +1,9 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
-import { Radio, Table } from "antd";
+import { BankOutlined } from "@ant-design/icons";
 import UzbMap from "../../pages/OptionTwo/UzbMap";
 
 function CommonArea() {
-  const columns = [
-    {
-      title: "Region",
-      dataIndex: "name",
-      render: (text) => <a>{text}</a>,
-    },
-    {
-      title: "Order",
-      dataIndex: "age",
-    },
-    {
-      title: "Address",
-      dataIndex: "address",
-    },
-  ];
-
-  const data = [
-    {
-      key: "1",
-      name: "Toshkent viloyati",
-      age: 12,
-      address: "Lake Park",
-    },
-    {
-      key: "2",
-      name: "Jizax viloyati",
-      age: 5,
-      address: "Lake Park",
-    },
-    {
-      key: "3",
-      name: "Andijon viloyati",
-      age: 9,
-      address: "Lake Park",
-    },
-    {
-      key: "4",
-      name: "Qashqadaryo viloyati",
-      age: 8,
-      address: "Lake Park",
-    },
-    {
-      key: "5",
-      name: "Samarqand viloyati",
-      age: 4,
-      address: "Lake Park",
-    },
-    {
-      key: "6",
-      name: "Navoi viloyati",
-      age: 7,
-      address: "Lake Park",
-    },
-  ];
-
-  const [selectionType, setSelectionType] = useState("checkbox");
-
-  const rowSelection = {
-    onChange: (selectedRowKeys, selectedRows) => {
-      console.log(
-        `selectedRowKeys: ${selectedRowKeys}`,
-        "selectedRows: ",
-        selectedRows
-      );
-    },
-  };
-
   return (
     <>
       <div
@@ -93,24 +26,63 @@ function CommonArea() {
             gap: 10,
           }}
         >
-          <div style={{ padding: 18, flex: 2, minWidth: 300 }}>
+          <div style={{ padding: 18, flex: 2, minWidth: 250 }}>
             <UzbMap />
           </div>
-          <div style={{ padding: 18, flex: 1 }}>
-            <Radio.Group
-              onChange={({ target: { value } }) => {
-                setSelectionType(value);
+          <div style={{ padding: 18, flex: 1, minWidth: 232, margin: "auto" }}>
+            <div
+              style={{
+                padding: 20,
+                border: "2px solid #ebedf0",
+                borderRadius: 8,
               }}
-              value={selectionType}
-            ></Radio.Group>
-            <Table
-              rowSelection={{
-                type: selectionType,
-                ...rowSelection,
-              }}
-              columns={columns}
-              dataSource={data}
-            />
+            >
+              <div
+                style={{
+                  display: "flex",
+                  textAlign: "center",
+                  alignItems: "center",
+                  // padding: "0px 10px",
+                  marginTop: 20,
+                }}
+              >
+                <BankOutlined style={{ fontSize: 30, marginRight: 16 }} />
+                <p style={{ fontSize: 18 }}>Hududiy vakillar</p>
+              </div>
+              <div>
+                <h2 style={{ margin: "20px 0" }}>Buxoro viloyati</h2>
+                <h2 style={{ margin: "10px 0 40px 0" }}>
+                  Baxtiyorov Shaxriyor
+                </h2>
+              </div>
+              <table style={{ paddingBottom: 20 }}>
+                <tr>
+                  <td>Tinchlik mahallasi</td>
+                  <td>2600</td>
+                  <td style={{ borderRight: "none" }}>GA</td>
+                </tr>
+                <tr>
+                  <td>Ahillik mahallasi</td>
+                  <td>1100</td>
+                  <td style={{ borderRight: "none" }}>GA</td>
+                </tr>
+                <tr>
+                  <td>Bubur mahallasi</td>
+                  <td>1050</td>
+                  <td style={{ borderRight: "none" }}>GA</td>
+                </tr>
+                <tr>
+                  <td>Birlik mahallasi</td>
+                  <td>100</td>
+                  <td style={{ borderRight: "none" }}>GA</td>
+                </tr>
+                <tr>
+                  <td>Sergeli mahallasi</td>
+                  <td>780</td>
+                  <td style={{ borderRight: "none" }}>GA</td>
+                </tr>
+              </table>
+            </div>
           </div>
         </div>
       </div>

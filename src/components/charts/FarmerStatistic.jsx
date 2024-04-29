@@ -1,70 +1,31 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
-import { Bar } from "@ant-design/plots";
+import { Pie } from "@ant-design/plots";
 
-export default function FarmerStatistic() {
-  const data = [
-    {
-      labelName: "MEVACHILIK",
-      value: 210,
-    },
-    {
-      labelName: "POLIZ",
-      value: 420,
-    },
-    {
-      labelName: "ARPA",
-      value: 630,
-    },
-    {
-      labelName: "BUGDOY",
-      value: 840,
-    },
-  ];
+const data = [
+  { type: "分类一", value: 27 },
+  { type: "分类二", value: 25 },
+  { type: "分类三", value: 18 },
+  { type: "分类四", value: 15 },
+  { type: "分类五", value: 10 },
+  { type: "其他", value: 5 },
+];
+const DemoPie = () => {
   const config = {
     data,
-    xField: "labelName",
-    yField: "value",
-    paddingRight: 50,
-    style: {
-      maxWidth: 18,
+    angleField: "value",
+    colorField: "type",
+    radius: 0.8,
+    label: {
+      text: (d) => `${d.type}\n ${d.value}`,
+      position: "spider",
     },
-    markBackground: {
-      label: {
-        text: ({ originData }) => {
-          return `${originData.value} `;
-        },
+    legend: {
+      color: {
+        title: false,
         position: "right",
-        dx: 50,
-        style: {
-          fill: "#aaa",
-          fillOpacity: 1,
-          fontSize: 14,
-        },
+        rowPadding: 5,
       },
-      style: {
-        fill: "#eee",
-      },
-    },
-    scale: {
-      y: {
-        domain: [0, 1000],
-      },
-    },
-    axis: {
-      x: {
-        tick: false,
-        title: false,
-      },
-      y: {
-        grid: false,
-        tick: false,
-        label: false,
-        title: false,
-      },
-    },
-    interaction: {
-      elementHighlightByColor: false,
     },
   };
   return (
@@ -89,7 +50,8 @@ export default function FarmerStatistic() {
         <h3>Dehqonlar soni</h3>
       </div>
       <hr />
-      <Bar {...config} />
+      <Pie {...config} />
     </div>
   );
-}
+};
+export default DemoPie;
