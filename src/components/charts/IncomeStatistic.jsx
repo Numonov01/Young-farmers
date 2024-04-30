@@ -27,13 +27,6 @@ const config = {
   style: {
     maxWidth: 50,
   },
-  conversionTag: {
-    size: 40,
-    spacing: 4,
-    text: {
-      formatter: (prev, next) => `${((next / prev) * 100).toFixed(1)}%`,
-    },
-  },
 };
 
 function IncomeStatistic() {
