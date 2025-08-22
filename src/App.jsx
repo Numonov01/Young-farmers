@@ -4,6 +4,7 @@ import {
   DesktopOutlined,
   FileOutlined,
   FireFilled,
+  HeatMapOutlined,
   OrderedListOutlined,
   PieChartOutlined,
   TeamOutlined,
@@ -23,6 +24,7 @@ function getItem(label, key, icon, children) {
 }
 
 const items = [
+  getItem(<Link to={"/map"}>Map</Link>, "1", <HeatMapOutlined />),
   getItem(
     <Link to={"/applications"}>Applications</Link>,
     "6",
@@ -30,7 +32,6 @@ const items = [
   ),
   getItem(<Link to={"/firewall"}>Firewall</Link>, "3", <FireFilled />),
   getItem(<Link to={"/devices"}>Host Devices</Link>, "4", <DesktopOutlined />),
-
   getItem(<Link to={"/logs"}>Agent Logs</Link>, "5", <OrderedListOutlined />),
   getItem("User", "sub1", <UserOutlined />, [
     getItem(<Link to={"/user/Tom"}>Tom</Link>, "3"),

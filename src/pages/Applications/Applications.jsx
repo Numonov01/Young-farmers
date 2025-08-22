@@ -76,9 +76,6 @@ const Applications = () => {
       title: "Host",
       dataIndex: "host",
       key: "host",
-      render: (id) => (
-        <span className="monospace">{id.substring(0, 8)}...</span>
-      ),
     },
   ];
 
