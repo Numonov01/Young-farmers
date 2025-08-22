@@ -1,9 +1,10 @@
-// eslint-disable-next-line no-unused-vars
-import React, { useState } from "react";
+import { useState } from "react";
 import { Layout, Menu, Avatar, Dropdown } from "antd";
 import {
   DesktopOutlined,
   FileOutlined,
+  FireFilled,
+  OrderedListOutlined,
   PieChartOutlined,
   TeamOutlined,
   UserOutlined,
@@ -22,8 +23,15 @@ function getItem(label, key, icon, children) {
 }
 
 const items = [
-  getItem(<Link to={"/OptionTwo"}>Statistics</Link>, "1", <PieChartOutlined />),
-  getItem(<Link to={"/OptionOne"}>Option</Link>, "2", <DesktopOutlined />),
+  getItem(
+    <Link to={"/applications"}>Applications</Link>,
+    "6",
+    <PieChartOutlined />
+  ),
+  getItem(<Link to={"/firewall"}>Firewall</Link>, "3", <FireFilled />),
+  getItem(<Link to={"/devices"}>Host Devices</Link>, "4", <DesktopOutlined />),
+
+  getItem(<Link to={"/logs"}>Agent Logs</Link>, "5", <OrderedListOutlined />),
   getItem("User", "sub1", <UserOutlined />, [
     getItem(<Link to={"/user/Tom"}>Tom</Link>, "3"),
     getItem(<Link to={"/user/Bill"}>Bill</Link>, "4"),
@@ -84,10 +92,10 @@ const App = () => {
       <Layout>
         <Header
           style={{
-            // position: "sticky",
-            // top: 0,
-            // zIndex: "1",
-            // width: "100%",
+            position: "sticky",
+            top: 0,
+            zIndex: "1",
+            width: "100%",
             background: "white", //Nav
             display: "flex",
             justifyContent: "space-between",
@@ -101,18 +109,18 @@ const App = () => {
               alignItems: "center",
             }}
           >
-            {/* <img
-              src="../vvvv.jpg"
+            <img
+              src="../firewall.png"
               alt="icon"
               style={{
                 width: 55,
                 marginRight: 10,
               }}
-            /> */}
-            <Avatar size={40} style={{ marginRight: 10 }}>
-              YF
-            </Avatar>
-            <h3 className="brand">Yosh fermerlar</h3>
+            />
+            {/* <Avatar size={40} style={{ marginRight: 10 }}>
+              FW
+            </Avatar> */}
+            <h3 className="brand">Firewall</h3>
           </div>
           <Dropdown overlay={menu} trigger={["click"]}>
             <a
@@ -139,7 +147,7 @@ const App = () => {
             height: 50,
           }}
         >
-          Yosh Fermerlar ©{new Date().getFullYear()}
+          Firewall ©{new Date().getFullYear()}
         </Footer>
       </Layout>
     </Layout>

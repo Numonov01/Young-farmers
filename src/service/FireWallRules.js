@@ -1,0 +1,62 @@
+// src/service/FireWallRules.js
+import { useState, useEffect } from "react";
+
+const useFirewallRules = () => {
+  const [rules, setRules] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [pagination, setPagination] = useState({
+    count: 0,
+    next: null,
+    previous: null,
+    currentPage: 1,
+  });
+
+  const fetchRules = async (url = null) => {
+    try {
+      setLoading(true);
+      setError(null);
+
+      const apiUrl =
+        url || `${import.meta.env.VITE_SERVER_URL}firewall/firewall-rules/`;
+      const response = await fetch(apiUrl);
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      setRules(data.results);
+      setPagination({
+        count: data.count,
+        next: data.next,
+        previous: data.previous,
+        currentPage: url
+          ? url.includes("page=")
+            ? parseInt(url.match(/page=(\d+)/)[1])
+            : 1
+          : 1,
+      });
+    } catch (err) {
+      setError(err.message);
+      console.error("Error fetching firewall rules:", err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchRules();
+  }, []);
+
+  return {
+    rules,
+    loading,
+    error,
+    pagination,
+    refresh: () => fetchRules(),
+    fetchPage: (url) => fetchRules(url),
+  };
+};
+
+export default useFirewallRules;
