@@ -4,7 +4,7 @@ import { Map } from "react-map-gl/maplibre";
 import { ArcLayer } from "@deck.gl/layers";
 import { Spin, Alert, Card, List, Typography, Divider } from "antd";
 import { CloseOutlined } from "@ant-design/icons";
-import useConnectionMap from "../../service/Map"; // ✅ real backend hook
+import useConnectionMap from "../../service/Map";
 
 const MAP_STYLE =
   "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json";

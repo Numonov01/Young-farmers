@@ -37,25 +37,31 @@ const FireWall = () => {
 
   const columns = [
     {
-      title: "ID",
-      dataIndex: "id",
-      key: "id",
-      width: 100,
-      render: (id) => (
-        <span className="monospace">{id.substring(0, 8)}...</span>
-      ),
+      title: "№",
+      key: "index",
+      width: 60,
+      render: (_, __, index) => (pagination.currentPage - 1) * 10 + index + 1,
+    },
+    // {
+    //   title: "ID",
+    //   dataIndex: "id",
+    //   key: "id",
+    //   width: 100,
+    //   render: (id) => (
+    //     <span className="monospace">{id.substring(0, 8)}...</span>
+    //   ),
+    // },
+    {
+      title: "Protocol",
+      dataIndex: "protocol",
+      key: "protocol",
+      render: (protocol) => <Tag color="geekblue">{protocol}</Tag>,
     },
     {
-      title: "Created At",
-      dataIndex: "created_at",
-      key: "created_at",
-      render: (date) => formatDate(date),
-    },
-    {
-      title: "Updated At",
-      dataIndex: "updated_at",
-      key: "updated_at",
-      render: (date) => formatDate(date),
+      title: "Host",
+      dataIndex: "host",
+      key: "host",
+      render: (host) => host || "null",
     },
     {
       title: "Port",
@@ -63,12 +69,7 @@ const FireWall = () => {
       key: "port",
       align: "center",
     },
-    {
-      title: "Protocol",
-      dataIndex: "protocol",
-      key: "protocol",
-      render: (protocol) => <Tag color="geekblue">{protocol}</Tag>,
-    },
+
     {
       title: "Direction",
       dataIndex: "direction",
@@ -83,18 +84,25 @@ const FireWall = () => {
       key: "action",
       render: (action) => <Tag color={getActionColor(action)}>{action}</Tag>,
     },
-    {
-      title: "Host",
-      dataIndex: "host",
-      key: "host",
-      render: (host) => host || "N/A",
-    },
+
     {
       title: "Application",
       dataIndex: "application",
       key: "application",
-      render: (app) => app || "N/A",
+      render: (app) => app || "null",
     },
+    {
+      title: "Created At",
+      dataIndex: "created_at",
+      key: "created_at",
+      render: (date) => formatDate(date),
+    },
+    // {
+    //   title: "Updated At",
+    //   dataIndex: "updated_at",
+    //   key: "updated_at",
+    //   render: (date) => formatDate(date),
+    // },
   ];
 
   return (

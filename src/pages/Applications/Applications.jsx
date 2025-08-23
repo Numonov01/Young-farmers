@@ -1,5 +1,5 @@
 // src/pages/Applications/Applications.jsx
-import { Table, Card, Button, Tag, Spin, Alert } from "antd";
+import { Table, Card, Button, Tag, Spin, Alert, Tooltip } from "antd";
 import { ReloadOutlined } from "@ant-design/icons";
 import { useParams } from "react-router-dom";
 import useApplications from "../../service/Applications";
@@ -26,45 +26,50 @@ const Applications = () => {
 
   const columns = [
     {
-      title: "ID",
-      dataIndex: "id",
-      key: "id",
-      width: 100,
-      render: (id) => (
-        <span className="monospace">{id.substring(0, 8)}...</span>
-      ),
+      title: "№",
+      key: "index",
+      width: 60,
+      render: (_, __, index) => (pagination.currentPage - 1) * 10 + index + 1,
     },
-    {
-      title: "Created At",
-      dataIndex: "created_at",
-      key: "created_at",
-      render: (date) => formatDate(date),
-    },
-    {
-      title: "Updated At",
-      dataIndex: "updated_at",
-      key: "updated_at",
-      render: (date) => formatDate(date),
-    },
-    {
-      title: "Image path",
-      dataIndex: "image_path",
-      key: "image_path",
-    },
-    {
-      title: "Pid",
-      dataIndex: "pid",
-      key: "pid",
-    },
+    // {
+    //   title: "ID",
+    //   dataIndex: "id",
+    //   key: "id",
+    //   width: 100,
+    //   render: (id) => (
+    //     <span className="monospace">{id.substring(0, 8)}...</span>
+    //   ),
+    // },
     {
       title: "Name",
       dataIndex: "name",
       key: "name",
     },
     {
+      title: "Image path",
+      dataIndex: "image_path",
+      key: "image_path",
+      render: (id) => (
+        <Tooltip title={id}>
+          <span className="monospace">{id.substring(0, 20)}...</span>
+        </Tooltip>
+      ),
+    },
+    {
+      title: "Pid",
+      dataIndex: "pid",
+      key: "pid",
+    },
+
+    {
       title: "Hash",
       dataIndex: "hash",
       key: "hash",
+      render: (id) => (
+        <Tooltip title={id}>
+          <span className="monospace">{id.substring(0, 10)}...</span>
+        </Tooltip>
+      ),
     },
     {
       title: "Status",
@@ -77,6 +82,18 @@ const Applications = () => {
       dataIndex: "host",
       key: "host",
     },
+    {
+      title: "Created At",
+      dataIndex: "created_at",
+      key: "created_at",
+      render: (date) => formatDate(date),
+    },
+    // {
+    //   title: "Updated At",
+    //   dataIndex: "updated_at",
+    //   key: "updated_at",
+    //   render: (date) => formatDate(date),
+    // },
   ];
 
   return (

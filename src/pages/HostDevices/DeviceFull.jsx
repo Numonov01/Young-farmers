@@ -1,3 +1,4 @@
+// src/pages/HostDevices/DeviceFull.jsx
 import {
   Card,
   Button,
@@ -25,7 +26,12 @@ const DeviceFullInfo = () => {
     error: appsError,
     refresh: refreshApps,
   } = useHostApplications(id);
+
   const [showApplications, setShowApplications] = useState(false);
+
+  // pagination state
+  const [currentPage, setCurrentPage] = useState(1);
+  const pageSize = 5;
 
   const formatDate = (dateString) => {
     return new Date(dateString).toLocaleString();
@@ -62,10 +68,16 @@ const DeviceFullInfo = () => {
   // Define columns for the applications table
   const applicationColumns = [
     {
-      title: "ID",
-      dataIndex: "id",
-      key: "id",
+      title: "№",
+      key: "index",
+      width: 60,
+      render: (_, __, index) => (currentPage - 1) * pageSize + index + 1,
     },
+    // {
+    //   title: "ID",
+    //   dataIndex: "id",
+    //   key: "id",
+    // },
     {
       title: "Name",
       dataIndex: "name",
@@ -245,7 +257,11 @@ const DeviceFullInfo = () => {
                       columns={applicationColumns}
                       dataSource={applications?.results || []}
                       rowKey="id"
-                      pagination={{ pageSize: 5 }}
+                      pagination={{
+                        pageSize,
+                        current: currentPage,
+                        onChange: (page) => setCurrentPage(page),
+                      }}
                       scroll={{ x: true }}
                       onRow={(record) => {
                         return {

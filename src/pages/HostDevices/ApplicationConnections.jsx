@@ -15,10 +15,16 @@ const ApplicationConnections = () => {
 
   const columns = [
     {
-      title: "ID",
-      dataIndex: "id",
-      key: "id",
+      title: "№",
+      key: "index",
+      width: 60,
+      render: (_, __, index) => (pagination.currentPage - 1) * 10 + index + 1,
     },
+    // {
+    //   title: "ID",
+    //   dataIndex: "id",
+    //   key: "id",
+    // },
     {
       title: "Local Address",
       dataIndex: "local_address",

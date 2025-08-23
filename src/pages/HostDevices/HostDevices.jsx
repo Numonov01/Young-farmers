@@ -25,13 +25,19 @@ const HostDevices = () => {
 
   const columns = [
     {
-      title: "ID",
-      dataIndex: "id",
-      key: "id",
-      render: (id) => (
-        <span className="monospace">{id.substring(0, 8)}...</span>
-      ),
+      title: "№",
+      key: "index",
+      width: 60,
+      render: (_, __, index) => (pagination.currentPage - 1) * 10 + index + 1,
     },
+    // {
+    //   title: "ID",
+    //   dataIndex: "id",
+    //   key: "id",
+    //   render: (id) => (
+    //     <span className="monospace">{id.substring(0, 8)}...</span>
+    //   ),
+    // },
     {
       title: "Host Name",
       dataIndex: "host_name",
