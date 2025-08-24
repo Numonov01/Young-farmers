@@ -10,6 +10,7 @@ import AgentLogs from "../pages/Logs/Logs";
 import Applications from "../pages/Applications/Applications";
 import ApplicationConnections from "../pages/HostDevices/ApplicationConnections";
 import Map from "../pages/Map/Map";
+import CreateFirewallRule from "../pages/Firewall/CreateFirewallRule";
 
 function Router() {
   return (
@@ -17,6 +18,7 @@ function Router() {
       <Route path="/user/:id" element={<Tom />} />
       <Route path="/map" element={<Map />} />
       <Route path="/firewall" element={<FireWall />} />
+      <Route path="/firewall/create" element={<CreateFirewallRule />} />
       <Route path="/devices" element={<HostDevices />} />
       <Route path="/devices/:id" element={<DeviceFullInfo />} />
       <Route path="/connections/:id" element={<ApplicationConnections />} />

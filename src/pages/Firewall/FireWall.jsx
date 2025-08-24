@@ -1,17 +1,31 @@
 // src/pages/Firewall/FireWall.jsx
-import { Table, Card, Button, Tag, Spin, Alert } from "antd";
-import { ReloadOutlined } from "@ant-design/icons";
-import { useParams } from "react-router-dom";
+import { Table, Card, Button, Tag, Spin, Alert, Modal, message } from "antd";
+import {
+  DeleteOutlined,
+  ExclamationCircleOutlined,
+  PlusCircleOutlined,
+  ReloadOutlined,
+} from "@ant-design/icons";
+import { useNavigate, useParams } from "react-router-dom";
 import useFirewallRules from "../../service/FireWallRules";
 
 const FireWall = () => {
   const { id } = useParams();
-  const { rules, loading, error, pagination, refresh, fetchPage } =
-    useFirewallRules();
+  const navigate = useNavigate();
+  const {
+    rules,
+    loading,
+    error,
+    pagination,
+    refresh,
+    fetchPage,
+    deleteRule: deleteRuleService,
+  } = useFirewallRules();
 
   const formatDate = (dateString) => {
     return new Date(dateString).toLocaleString();
   };
+  const { confirm } = Modal;
 
   const getActionColor = (action) => {
     switch (action) {
@@ -30,9 +44,31 @@ const FireWall = () => {
         return "blue";
       case "OUTBOUND":
         return "orange";
+      case "BOTH":
+        return "purple";
       default:
         return "default";
     }
+  };
+
+  const showDeleteConfirm = (ruleId) => {
+    confirm({
+      title: "Are you sure you want to delete this rule?",
+      icon: <ExclamationCircleOutlined />,
+      content: "This action cannot be undone.",
+      okText: "Yes",
+      okType: "danger",
+      cancelText: "No",
+      async onOk() {
+        try {
+          await deleteRuleService(ruleId);
+          message.success("Rule deleted successfully!");
+          refresh();
+        } catch (err) {
+          message.error("Failed to delete rule: " + err.message);
+        }
+      },
+    });
   };
 
   const columns = [
@@ -43,14 +79,26 @@ const FireWall = () => {
       render: (_, __, index) => (pagination.currentPage - 1) * 10 + index + 1,
     },
     // {
-    //   title: "ID",
-    //   dataIndex: "id",
-    //   key: "id",
-    //   width: 100,
-    //   render: (id) => (
-    //     <span className="monospace">{id.substring(0, 8)}...</span>
-    //   ),
+    //   title: "Title",
+    //   dataIndex: "title",
+    //   key: "title",
     // },
+    // {
+    //   title: "Description",
+    //   dataIndex: "description",
+    //   key: "description",
+    // },
+    {
+      title: "Host name",
+      dataIndex: ["host", "host_name"],
+      key: "id",
+    },
+    {
+      title: "Application",
+      dataIndex: ["application", "name"],
+      key: "application",
+      render: (app) => app || "null",
+    },
     {
       title: "Protocol",
       dataIndex: "protocol",
@@ -58,18 +106,11 @@ const FireWall = () => {
       render: (protocol) => <Tag color="geekblue">{protocol}</Tag>,
     },
     {
-      title: "Host",
-      dataIndex: "host",
-      key: "host",
-      render: (host) => host || "null",
-    },
-    {
       title: "Port",
       dataIndex: "port",
       key: "port",
       align: "center",
     },
-
     {
       title: "Direction",
       dataIndex: "direction",
@@ -86,23 +127,24 @@ const FireWall = () => {
     },
 
     {
-      title: "Application",
-      dataIndex: "application",
-      key: "application",
-      render: (app) => app || "null",
-    },
-    {
       title: "Created At",
-      dataIndex: "created_at",
+      dataIndex: ["application", "created_at"],
       key: "created_at",
       render: (date) => formatDate(date),
     },
-    // {
-    //   title: "Updated At",
-    //   dataIndex: "updated_at",
-    //   key: "updated_at",
-    //   render: (date) => formatDate(date),
-    // },
+    {
+      title: "Delete",
+      key: "delete",
+      width: 100,
+      render: (_, record) => (
+        <Button
+          icon={<DeleteOutlined />}
+          danger
+          onClick={() => showDeleteConfirm(record.id)}
+          disabled={loading}
+        />
+      ),
+    },
   ];
 
   return (
@@ -119,14 +161,24 @@ const FireWall = () => {
           </div>
         }
         extra={
-          <Button
-            icon={<ReloadOutlined />}
-            onClick={refresh}
-            disabled={loading}
-            type="primary"
-          >
-            Refresh
-          </Button>
+          <div>
+            <Button
+              icon={<ReloadOutlined />}
+              onClick={refresh}
+              disabled={loading}
+              type="primary"
+            >
+              Refresh
+            </Button>
+            <Button
+              icon={<PlusCircleOutlined />}
+              onClick={() => navigate("/firewall/create")}
+              type="primary"
+              style={{ marginLeft: 8 }}
+            >
+              Add Rule
+            </Button>
+          </div>
         }
         style={{
           boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
@@ -140,6 +192,8 @@ const FireWall = () => {
             type="error"
             showIcon
             style={{ marginBottom: "16px" }}
+            closable
+            onClose={() => refresh()}
           />
         )}
 

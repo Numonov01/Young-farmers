@@ -89,10 +89,14 @@ const DeviceFullInfo = () => {
       key: "pid",
     },
     {
-      title: "Image Path",
-      dataIndex: "image_path",
-      key: "image_path",
-      render: (path) => (path ? path.split("\\").pop() : "N/A"),
+      title: "Sent",
+      dataIndex: "sent",
+      key: "sent",
+    },
+    {
+      title: "Received",
+      dataIndex: "received",
+      key: "received",
     },
   ];
 

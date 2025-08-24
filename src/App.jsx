@@ -7,6 +7,7 @@ import {
   HeatMapOutlined,
   OrderedListOutlined,
   PieChartOutlined,
+  PlusCircleOutlined,
   TeamOutlined,
   UserOutlined,
 } from "@ant-design/icons";
@@ -30,9 +31,21 @@ const items = [
     "6",
     <PieChartOutlined />
   ),
-  getItem(<Link to={"/firewall"}>Firewall</Link>, "3", <FireFilled />),
+
   getItem(<Link to={"/devices"}>Host Devices</Link>, "4", <DesktopOutlined />),
   getItem(<Link to={"/logs"}>Agent Logs</Link>, "5", <OrderedListOutlined />),
+  getItem("Friwall", "firewall", <FireFilled />, [
+    getItem(
+      <Link to={"/firewall"}>Firewall list</Link>,
+      "3",
+      <OrderedListOutlined />
+    ),
+    getItem(
+      <Link to={"/firewall/create"}>Create</Link>,
+      "10",
+      <PlusCircleOutlined />
+    ),
+  ]),
   getItem("User", "sub1", <UserOutlined />, [
     getItem(<Link to={"/user/Tom"}>Tom</Link>, "3"),
     getItem(<Link to={"/user/Bill"}>Bill</Link>, "4"),

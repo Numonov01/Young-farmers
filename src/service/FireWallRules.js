@@ -45,6 +45,68 @@ const useFirewallRules = () => {
     }
   };
 
+  const createRule = async (ruleData) => {
+    try {
+      setLoading(true);
+      setError(null);
+
+      const response = await fetch(
+        `${import.meta.env.VITE_SERVER_URL}firewall/firewall-rules/`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(ruleData),
+        }
+      );
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(
+          errorData.message || `HTTP error! status: ${response.status}`
+        );
+      }
+
+      const newRule = await response.json();
+      setRules((prevRules) => [newRule, ...prevRules]);
+      return newRule;
+    } catch (err) {
+      setError(err.message);
+      console.error("Error creating firewall rule:", err);
+      throw err;
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const deleteRule = async (ruleId) => {
+    try {
+      setLoading(true);
+      setError(null);
+
+      const response = await fetch(
+        `${import.meta.env.VITE_SERVER_URL}firewall/firewall-rules/${ruleId}/`,
+        {
+          method: "DELETE",
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      setRules((prevRules) => prevRules.filter((rule) => rule.id !== ruleId));
+      return true;
+    } catch (err) {
+      setError(err.message);
+      console.error("Error deleting firewall rule:", err);
+      throw err;
+    } finally {
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
     fetchRules();
   }, []);
@@ -56,6 +118,8 @@ const useFirewallRules = () => {
     pagination,
     refresh: () => fetchRules(),
     fetchPage: (url) => fetchRules(url),
+    createRule,
+    deleteRule,
   };
 };
 
